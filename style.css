@@ -1,0 +1,65 @@
+.modal-wrapper{
+  height: 100vh;
+  width: 100vw;
+  top:0;
+  left:0;
+  position: absolute;
+  z-index: 5;
+  background: rgb(0, 0, 0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-modal{
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 9;
+}
+
+.header {
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+.hidden{
+  display: none;
+}
+.add_button{
+  width: 200px;
+  height: 40px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 15px;
+}
+img {
+  width: 200px;
+  max-width: 200px;
+}
+body {
+  background: linear-gradient(blue, rgb(211, 87, 107));
+  cursor: url('/пусть к файлу/sword.cur'), auto;
+}
+.main-cards {
+  color: aliceblue;
+  background-color:purple;
+  padding: 5px;
+  width: 18rem;
+  display: flex;
+  justify-content: center;
+}
+.cardButtons {
+  margin: 5px;
+}
+.closing_button{
+  width: 200px;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px; 
+}

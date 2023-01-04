@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Котики</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./api.js"></script>
+    <script defer src="./description.js"></script>
+    <script defer src="./functions.js"></script>
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="header">Котлекция</h1>
+
+      <div class="d-flex justify-content-center mb-5">
+        <button data-add_button class="add_button">Добавить</button>
+      </div>
+
+      <!-- TODO: вероятно навести красоту со спиннером -->
+      <div data-spinner class="spinner-grow spinner-grow-sm text-light position-absolute top-50 start-50" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+
+      <!-- сюда вставляются коты -->
+      <div data-wrapper class="d-flex justify-content-center"></div>
+    </div>
+
+    <!-- другие модалки должны быть тут -->
+    <div data-modal class="modal-wrapper hidden">
+      <!-- добавление кота -->
+      <div data-add_modal class="custom-modal hidden">
+        <form name="catsForm">
+          <input
+            type="number"
+            name="id"
+            placeholder="Id"
+            class="form-control mb-2"
+            id="exampleInputEmail4"
+          />
+          <input
+            type="text"
+            name="name"
+            placeholder="Имя кота"
+            class="form-control mb-2"
+            id="exampleInputEmail1"
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Описание кота"
+            class="form-control mb-2"
+            id="exampleInputEmail2"
+          />
+          <input
+            type="text"
+            name="image"
+            placeholder="Url картинки"
+            class="form-control mb-2"
+            id="exampleInputEmail3"
+          />
+          <input
+            type="number"
+            name="age"
+            placeholder="Возраст"
+            class="form-control mb-2"
+            id="exampleInputEmail5"
+          />
+          <input
+            type="number"
+            name="rate"
+            placeholder="Рейтинг"
+            class="form-control mb-2"
+            id="exampleInputEmail6"
+          />
+          <div class="mb-3 form-check">
+            <input
+              name="favorite"
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Нажми если любимый</label
+            >
+          </div>
+          <button type="submit" class="btn btn-primary">Создать</button>
+          <button id="closing_button_1" class="btn btn-danger">Закрыть</button> 
+        </form>
+      </div>
+        <!-- модальное окно для редактирования -->
+      <div data-change_modal class="custom-modal hidden">
+      <div>
+        <form name="catChange">
+          <input
+            type="text"
+            name="name"
+            placeholder="Имя кота"
+            class="form-control mb-2"
+            id="exampleInputEmail1"
+          />
+          <input
+            type="text"
+            name="description"
+            placeholder="Описание кота"
+            class="form-control mb-2"
+            id="exampleInputEmail2"
+          />
+          <input
+            type="text"
+            name="image"
+            placeholder="Url картинки"
+            class="form-control mb-2"
+            id="exampleInputEmail3"
+          />
+          <input
+            type="number"
+            name="age"
+            placeholder="Возраст"
+            class="form-control mb-2"
+            id="exampleInputEmail5"
+          />
+          <input
+            type="number"
+            name="rate"
+            placeholder="Рейтинг"
+            class="form-control mb-2"
+            id="exampleInputEmail6"
+          />
+          <button type="submit" class="btn btn-primary">Редактировать</button>
+          <button class="btn btn-danger" id="closing_button_2">Закрыть</button> 
+        </form>
+      </div>
+      </div>
+      <!-- модалка описания -->
+      <div data-descript class="card mx-2 hidden custom-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+           <div class="modal-header">
+           <img id="imageOfCat" src="" class="card-img-top" alt="Фото">
+           <div class="card-body">
+             <h5 class="card-title">Имя кота:<span id="cat_name"></span></h5> <!-- Имя -->
+             <p class="card-text">Котовый номер:<span id="cat_id"></span></p> <!-- ID -->
+             <p class="card-text">Котовый возраст:<span id="cat_age"></span></p> <!-- Возраст -->
+             <p class="card-text">Котовый рейтинг:<span id="cat_rate"></span></p> <!-- Рейтинг -->
+             <p class="card-text">Описание:<span id="cat_description"></span></p> <!-- Описание -->
+             <button id="closing_button_3" class="btn btn-danger">Закрыть</button> 
+          </div>
+          </div>
+    </div>
+  </body>
+</html>
